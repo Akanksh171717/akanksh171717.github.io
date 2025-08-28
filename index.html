@@ -6,142 +6,106 @@
   <title>Akanksh Shetty • Data Analyst Portfolio</title>
   <meta name="description" content="Portfolio of Akanksh Shetty — Data Analyst specializing in SQL, Tableau, Python, and R. Projects, experience, certifications, and contact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/94b2871170.js" crossorigin="anonymous" defer></script>
+  <!-- Font Awesome (CSS CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root {
-      --bg: #0b0d13;
-      --card: rgba(255,255,255,0.06);
-      --card-hover: rgba(255,255,255,0.10);
-      --text: #e6e8ef;
-      --muted: #b9bfd1;
-      --brand: #fe7f2d; /* Syracuse orange vibe */
-      --accent: #6ee7ff; /* cyan */
-      --ring: 0 0 0 3px rgba(110,231,255,.25);
-      --radius: 18px;
-      --shadow: 0 12px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+    :root{
+      --bg:#0b0d13; --card:rgba(255,255,255,.06); --card-hover:rgba(255,255,255,.10);
+      --text:#e6e8ef; --muted:#b9bfd1; --brand:#fe7f2d; --accent:#6ee7ff;
+      --ring:0 0 0 3px rgba(110,231,255,.25); --radius:18px;
+      --shadow:0 12px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
     }
-    /* Project grid + cards (works with your existing theme) */
-.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 18px; }
-.card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
-.card:hover { background: rgba(255,255,255,0.10); transform: translateY(-2px); }
-
-    /* About section styling */
-#about {
-  font-size: 1.15rem;   /* bigger text (18–19px approx) */
-  line-height: 1.8;     /* more breathing space */
-  color: var(--text);   /* use your defined text color */
-  max-width: 950px;     /* keep it readable, not too wide */
-  margin: 0 auto;       /* center align */
-}
-
-#about h2 {
-  font-size: 2rem;      /* bigger About title */
-  margin-bottom: 1rem;
-  color: var(--brand);  /* Syracuse orange for a nice pop */
-}
-
-/* Thumbnail: icon or image, always centered and sized */
-.thumb {
-  aspect-ratio: 16/9;
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, #131923, #0e141f);
-  display: flex; align-items: center; justify-content: center;
-}
-.thumb i { font-size: 64px; color: #cfe9ff; }
-.thumb img { max-width: 70%; max-height: 70%; object-fit: contain; display: block; }
-
-.tag { display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(110,231,255,.15); color:#6ee7ff; font-size:12px; font-weight:700; margin-top:4px; }
-
-.btn { display:inline-block; padding:10px 16px; border-radius:999px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; font-weight:600; margin-top:10px; }
-.btn:hover { background:rgba(255,255,255,0.15); }
-
-    * { box-sizing: border-box }
-    html, body { height: 100% }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:var(--text);
       background:
         radial-gradient(1200px 600px at 10% -10%, #182033 0%, transparent 60%),
         radial-gradient(1000px 500px at 110% 10%, #111827 0%, transparent 60%),
         linear-gradient(180deg, #0a0c12 0%, #0b0d13 100%);
     }
 
-    /* --------- NAV --------- */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(10,12,18,.55);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; gap: 14px }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 800; letter-spacing: .2px }
-    .logo .mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(145deg,var(--brand),#ffb36c); display:grid;place-items:center; box-shadow: var(--shadow) }
-    .logo .mark span { font-weight: 900; font-size: 20px; color: #171717 }
-    .nav ul { list-style: none; display: flex; gap: 16px; margin: 0 0 0 auto; padding: 0 }
-    .nav a { color: var(--muted); text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 999px }
-    .nav a:hover, .nav a:focus { color: var(--text); background: rgba(255,255,255,.06); outline: none; box-shadow: var(--ring) }
+    /* ---------- NAV ---------- */
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,12,18,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.2px}
+    .logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(145deg,var(--brand),#ffb36c);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo .mark span{font-weight:900;font-size:20px;color:#171717}
+    .nav ul{list-style:none;display:flex;gap:16px;margin:0 0 0 auto;padding:0}
+    .nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:999px}
+    .nav a:hover,.nav a:focus{color:var(--text);background:rgba(255,255,255,.06);outline:none;box-shadow:var(--ring)}
 
-    /* --------- HERO --------- */
-    .hero { max-width: 1200px; margin: 0 auto; padding: 64px 20px 32px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center }
-    .title { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 0 0 12px }
-    .subtitle { font-size: clamp(18px, 2.5vw, 22px); color: var(--muted); margin-top: 0 }
-    .cta-row { display:flex; gap: 12px; margin-top: 20px; flex-wrap: wrap }
-    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; border: 1px solid rgba(255,255,255,.08) }
-    .btn.primary { background: linear-gradient(135deg,var(--brand),#ff9a45); color:#161616 }
-    .btn.ghost { color: var(--text); background: rgba(255,255,255,.06) }
-    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow) }
-    .hero-card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow) }
-    .badge-row img { height: 28px; margin-right: 8px; vertical-align: middle }
-    .socials { display:flex; gap: 10px; margin-top: 14px }
-    .icon-btn { width:42px; height:42px; display:grid; place-items:center; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08) }
-    .icon-btn:hover { background: var(--card-hover) }
+    /* ---------- PREMIUM HERO ---------- */
+    .hero-pro{position:relative;max-width:1200px;margin:0 auto;padding:90px 20px 40px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    @media (max-width:900px){.hero-pro{grid-template-columns:1fr;padding-top:70px}}
+    .kicker{color:var(--brand);font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+    .title-xl{font-size:clamp(40px,7vw,76px);line-height:1.05;margin:0 0 10px}
+    .subtitle-lg{font-size:clamp(18px,2.5vw,22px);color:var(--muted);margin:6px 0 0;max-width:720px}
+    .grad{background:linear-gradient(90deg,var(--brand),#ffb36c);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .glow{text-shadow:0 0 30px rgba(255,255,255,.15)}
+    .cta-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid rgba(255,255,255,.08)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#ff9a45);color:#161616}
+    .btn.ghost{color:var(--text);background:rgba(255,255,255,.06)}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .badge-row img{height:28px;margin-right:8px;vertical-align:middle}
+    .socials{display:flex;gap:10px;margin-top:14px}
+    .icon-btn{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .icon-btn:hover{background:var(--card-hover)}
+    .scroll-cue{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--muted);font-weight:600}
+    .scroll-cue span{display:inline-block;width:10px;height:18px;border:2px solid rgba(255,255,255,.4);border-radius:10px;position:relative}
+    .scroll-cue span::after{content:"";position:absolute;left:50%;top:4px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.6);transform:translateX(-50%);animation:dot 1.3s infinite}
+    @keyframes dot{50%{transform:translate(-50%,6px);opacity:.5}}
+    /* floating background glow */
+    body::before,body::after{content:"";position:fixed;inset:-20% -10% auto auto;z-index:-1;pointer-events:none;width:60vmax;height:60vmax;border-radius:50%;
+      background:radial-gradient(closest-side, rgba(110,231,255,.12), transparent 60%);animation:float 18s ease-in-out infinite alternate}
+    body::after{left:-10%;top:-5%;background:radial-gradient(closest-side, rgba(254,127,45,.14), transparent 60%);animation-duration:22s}
+    @keyframes float{to{transform:translate3d(0,30px,0) scale(1.03)}}
 
-    /* --------- SECTIONS --------- */
-    section { scroll-margin-top: 90px }
-    .section { max-width: 1200px; margin: 0 auto; padding: 32px 20px }
-    .section h2 { font-size: clamp(26px, 3vw, 34px); margin: 8px 0 18px }
-    .muted { color: var(--muted) }
+    /* ---------- SHARED SECTIONS ---------- */
+    section{scroll-margin-top:90px}
+    .section{max-width:1200px;margin:0 auto;padding:32px 20px}
+    .section h2{font-size:clamp(26px,3vw,34px);margin:8px 0 18px}
+    .muted{color:var(--muted)}
 
-    /* Skills grid */
-    .skills { display:grid; grid-template-columns: repeat(auto-fit, minmax(60px,1fr)); gap: 14px }
-    .skill { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; height: 64px; display:grid; place-items:center; box-shadow: var(--shadow) }
-    .skill img { height: 32px }
+    /* ---------- ABOUT (on same page) ---------- */
+    #about .lead{font-size:1.15rem;line-height:1.9;color:var(--muted);max-width:950px}
+    .about-card{margin-top:20px;padding:24px;border-radius:18px;background:var(--card);border:1px solid rgba(255,255,255,.08)}
+    .about-kicker{color:var(--brand);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .about-title{font-size:clamp(30px,4vw,42px);margin:.2rem 0 .8rem}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(110,231,255,.12);color:#6ee7ff;font-weight:700;font-size:.85rem;margin:6px 8px 0 0}
 
-    /* Cards */
-    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px }
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); display:flex; flex-direction:column; gap: 10px }
-    .card:hover { background: var(--card-hover); transform: translateY(-2px) }
-    .card .thumb { aspect-ratio: 16/9; width:100%; border-radius: 12px; object-fit: cover; border: 1px solid rgba(255,255,255,.08) }
-    .tag { display:inline-block; padding:6px 10px; border-radius: 999px; background: rgba(110,231,255,.15); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing:.3px }
+    /* Skills */
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:14px}
+    .skill{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;height:64px;display:grid;place-items:center;box-shadow:var(--shadow)}
+    .skill img{height:32px}
 
-    /* Timeline */
-    .timeline { position: relative; margin-left: 8px; padding-left: 18px; border-left: 2px dashed rgba(255,255,255,.12) }
-    .t-item { margin: 0 0 22px; position: relative }
-    .t-item::before { content: ""; position:absolute; left: -11px; top: 6px; width: 12px; height: 12px; border-radius: 999px; background: linear-gradient(135deg, var(--brand), #ffb36c); box-shadow: 0 0 0 3px rgba(254,127,45,.25) }
-    .t-meta { display:flex; gap: 8px; flex-wrap: wrap; color: var(--muted); font-size: 14px }
+    /* Cards / Projects */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .card:hover{background:var(--card-hover);transform:translateY(-2px)}
+    .thumb{aspect-ratio:16/9;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,#131923,#0e141f);display:flex;align-items:center;justify-content:center}
+    .thumb i{font-size:64px;color:#cfe9ff}
+    .thumb img{max-width:70%;max-height:70%;object-fit:contain;display:block}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(110,231,255,.15);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.3px}
 
     /* Footer */
-    footer { border-top: 1px solid rgba(255,255,255,.08); margin-top: 40px; padding: 30px 20px; background: rgba(255,255,255,.03) }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items:center }
+    footer{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding:30px 20px;background:rgba(255,255,255,.03)}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
 
-    /* Responsive */
-    @media (max-width: 900px) { .hero { grid-template-columns: 1fr } }
-    @media (prefers-reduced-motion: reduce) { .btn, .card, .nav a { transition: none !important } }
+    @media (prefers-reduced-motion:reduce){.btn,.card,.nav a{transition:none!important}}
   </style>
 </head>
 <body>
-  <!-- ========== NAV ========== -->
+  <!-- NAV -->
   <header class="nav" role="navigation" aria-label="Primary">
     <div class="nav-inner">
       <a href="#top" class="logo" aria-label="Akanksh Shetty home">
-        <div class="mark"><span>A</span></div>
-        <span>Akanksh Shetty</span>
+        <div class="mark"><span>A</span></div><span>Akanksh Shetty</span>
       </a>
       <ul>
         <li><a href="#about">About</a></li>
@@ -154,13 +118,22 @@
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <main id="top" class="hero">
-    <div>
-      <h1 class="title">Data Analyst turning data into decisions.</h1>
-      <p class="subtitle">MS in Information Systems (CAS in Data Science) — Syracuse University. Focused on SQL, Tableau, Python & R. Passionate about clear analytics, reliable pipelines, and useful dashboards.</p>
+  <!-- HERO (upgraded) -->
+  <main id="top" class="hero-pro">
+    <div class="hero-copy">
+      <p class="kicker">Akanksh Shetty</p>
+      <h1 class="title-xl">
+        <span class="grad">Data Analyst</span> turning<br/> data into <span class="glow">decisions</span>.
+      </h1>
+      <p class="subtitle-lg">
+        MS in Information Systems (CAS in Data Science) — Syracuse University.
+        Focused on <strong>SQL, Tableau, Python & R</strong>. Passionate about clear analytics,
+        reliable pipelines, and useful dashboards.
+      </p>
       <div class="cta-row">
-        <a class="btn primary" href="https://www.linkedin.com/in/akanksh17" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i> Connect</a>
+        <a class="btn primary" href="https://www.linkedin.com/in/akanksh17" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-linkedin"></i> Connect
+        </a>
         <a class="btn ghost" href="#projects"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
         <a class="btn ghost" href="mailto:akanksh171717@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a>
       </div>
@@ -168,176 +141,179 @@
         <a class="icon-btn" href="https://github.com/Akanksh171717" aria-label="GitHub" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
         <a class="icon-btn" href="https://x.com/akanksh171717" aria-label="Twitter/X" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
+      <div class="scroll-cue"><span></span> Scroll</div>
     </div>
 
     <aside class="hero-card" aria-label="Quick facts">
       <h3 style="margin:6px 0 10px">Quick Facts</h3>
       <ul class="muted" style="line-height:1.7; padding-left: 18px; margin: 0">
-      <li>Advanced skills in <strong>Python, SQL, and R</strong> for data analysis & modeling</li>
-      <li>Strong background in <strong>ETL automation, dashboards (Tableau/Power BI)</strong>, and cloud (AWS, Azure)</li>
-      <li>Experienced in <strong>machine learning pipelines</strong> (XGBoost, NLP, Deep Learning)</li>
-      <li>Follow the full <strong>Data Analysis Lifecycle</strong>: Ask → Prepare → Process → Analyze → Share → Act</li>
+        <li>Advanced skills in <strong>Python, SQL, and R</strong> for data analysis & modeling</li>
+        <li><strong>ETL automation</strong>, dashboards (Tableau/Power BI), and cloud (AWS, Azure)</li>
+        <li>Experienced in <strong>ML pipelines</strong> (XGBoost, NLP, Deep Learning)</li>
+        <li><strong>Lifecycle</strong>: Ask → Prepare → Process → Analyze → Share → Act</li>
       </ul>
       <div class="badge-row" style="margin-top:14px">
-      <img src="https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-      <img src="https://img.shields.io/badge/BI-Tableau-E97627?logo=tableau&logoColor=white" alt="Tableau"/>
-      <img src="https://img.shields.io/badge/BI-Power%20BI-F2C811?logo=powerbi&logoColor=111" alt="Power BI"/>
-      <img src="https://img.shields.io/badge/Cloud-AWS-232F3E?logo=amazon-aws&logoColor=ff9900" alt="AWS"/>
-    </div>
-  </aside>
-
+        <img src="https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+        <img src="https://img.shields.io/badge/BI-Tableau-E97627?logo=tableau&logoColor=white" alt="Tableau"/>
+        <img src="https://img.shields.io/badge/BI-Power%20BI-F2C811?logo=powerbi&logoColor=111" alt="Power BI"/>
+        <img src="https://img.shields.io/badge/Cloud-AWS-232F3E?logo=amazon-aws&logoColor=ff9900" alt="AWS"/>
+      </div>
+    </aside>
   </main>
 
-  <!-- ========== ABOUT / SKILLS ========== -->
+  <!-- ABOUT (same page, beautified) -->
   <section id="about" class="section">
-    <h2>About</h2>
-    <p class="muted">I turn raw data into actionable insights that help organizations make smarter decisions. My toolkit includes SQL for 
-      building reliable data pipelines, Python and R for advanced analysis and modeling, and Tableau/Power BI for crafting clear, interactive 
-      dashboards that tell compelling stories. I approach every project with a structured lifecycle: Ask → Prepare → Process → Analyze → Share → Act, 
-      ensuring insights are not just found, but acted upon. I’m passionate about responsible analytics, accessibility, and practical solutions that drive 
-      measurable impact, improve efficiency, and make data understandable for both technical and non-technical audiences.</p>
+    <div class="about-kicker">About</div>
+    <h2 class="about-title">I turn raw data into actionable insights.</h2>
+    <p class="lead">
+      My toolkit includes <strong>SQL</strong> for building reliable data pipelines, <strong>Python</strong> and <strong>R</strong> for advanced analysis and
+      modeling, and <strong>Tableau/Power BI</strong> for clear, interactive dashboards that tell compelling stories.
+      I follow a structured lifecycle: <strong>Ask → Prepare → Process → Analyze → Share → Act</strong>,
+      ensuring insights aren’t just found—they drive decisions. I care about responsible analytics, accessibility,
+      and shipping work people actually use.
+    </p>
+
+    <div class="about-card">
+      <h3 style="margin:0 0 .6rem;">Focus Areas & Toolkit</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span class="pill">ETL Automation</span>
+        <span class="pill">XGBoost</span>
+        <span class="pill">Time Series</span>
+        <span class="pill">NLP</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">AWS</span>
+        <span class="pill">Azure</span>
+      </div>
+    </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills" class="section">
     <h2>Skills</h2>
     <div class="skills" aria-label="Skills logos">
-      <div class="skill"><img src="https://skillicons.dev/icons?i=python" alt="Python"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=r" alt="R"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=java" alt="Java"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=aws" alt="AWS"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=azure" alt="Azure"/></div>
-      <div class="skill"><img src="https://skillicons.dev/icons?i=git" alt="Git"/></div>
-      <div class="skill"><img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau"/></div>
-      <div class="skill"><img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=111" alt="Power BI"/></div>
-      <div class="skill"><img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" alt="Snowflake"/></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=python" alt="Python"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=r" alt="R"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=java" alt="Java"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=aws" alt="AWS"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=azure" alt="Azure"></div>
+      <div class="skill"><img src="https://skillicons.dev/icons?i=git" alt="Git"></div>
+      <div class="skill"><img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau"></div>
+      <div class="skill"><img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=111" alt="Power BI"></div>
+      <div class="skill"><img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" alt="Snowflake"></div>
     </div>
   </section>
 
-  <!-- ========== EXPERIENCE ========== -->
+  <!-- EXPERIENCE -->
   <section id="experience" class="section">
-  <h2>Experience</h2>
-  <div class="grid">
-
-    <!-- Black Box -->
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <h3 style="margin:0;">Machine Learning Intern</h3>
-        <span class="muted">Apr–Jun 2022</span>
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h3 style="margin:0;">Machine Learning Intern</h3>
+          <span class="muted">Apr–Jun 2022</span>
+        </div>
+        <p class="muted" style="margin:.2rem 0 .8rem;"><strong>Black Box Limited</strong> • Mumbai, India</p>
+        <ul style="line-height:1.7; margin:0; padding-left:20px;">
+          <li>Developed an <strong>ANPR system</strong> with Python & OpenCV, achieving <strong>86.3% accuracy</strong>.</li>
+          <li>Optimized preprocessing (Gaussian blur, Sobel filters, morphological ops) → latency <strong>-30%</strong>, precision <strong>+12%</strong>.</li>
+          <li>Built an <strong>Automation Anywhere</strong> RPA bot for invoice extraction → manual entry <strong>-65%</strong>.</li>
+        </ul>
       </div>
-      <p class="muted" style="margin:.2rem 0 .8rem;">
-        <strong>Black Box Limited</strong> • Mumbai, India
-      </p>
-      <ul style="line-height:1.7; margin:0; padding-left:20px;">
-        <li>Developed an <strong>ANPR system</strong> with Python & OpenCV, achieving <strong>86.3% accuracy</strong> across varying conditions.</li>
-        <li>Optimized preprocessing (Gaussian blur, Sobel filters, morphological ops), reducing latency by <strong>30%</strong> and improving recognition by <strong>12%</strong>.</li>
-        <li>Designed and deployed an <strong>RPA bot</strong> (Automation Anywhere) that automated invoice extraction, cutting manual data entry by <strong>65%</strong>.</li>
-      </ul>
-    </div>
 
-    <!-- BARC -->
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <h3 style="margin:0;">Data Science Intern (Signal & Sensor Analytics)</h3>
-        <span class="muted">Jan–Mar 2022</span>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h3 style="margin:0;">Data Science Intern (Signal & Sensor Analytics)</h3>
+          <span class="muted">Jan–Mar 2022</span>
+        </div>
+        <p class="muted" style="margin:.2rem 0 .8rem;"><strong>BARC</strong> • Mumbai, India</p>
+        <ul style="line-height:1.7; margin:0; padding-left:20px;">
+          <li>Python-based <strong>data acquisition</strong> for <strong>10K+ real-time sensor readings</strong>.</li>
+          <li>Improved anomaly detection by <strong>30%</strong>; reduced noise variance by <strong>20%</strong>.</li>
+          <li>Delivered actionable insights & <strong>technical documentation</strong> for research teams.</li>
+        </ul>
       </div>
-      <p class="muted" style="margin:.2rem 0 .8rem;">
-        <strong>Bhabha Atomic Research Centre (BARC)</strong> • Mumbai, India
-      </p>
-      <ul style="line-height:1.7; margin:0; padding-left:20px;">
-        <li>Built a Python-based <strong>data acquisition system</strong> to process <strong>10K+ real-time sensor readings</strong>.</li>
-        <li>Improved anomaly detection by <strong>30%</strong> and reduced noise variance by <strong>20%</strong> using structured pipelines.</li>
-        <li>Delivered actionable insights and <strong>technical documentation</strong> to support scientific research teams.</li>
-      </ul>
     </div>
+  </section>
 
-  </div>
-</section>
-
-  <!-- ========== PROJECTS ========== -->
+  <!-- PROJECTS -->
   <section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="grid">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-city" aria-hidden="true"></i></div>
+        <div class="tag">Tableau</div>
+        <h3>Crime Analysis in NYC</h3>
+        <p class="muted">Multi-dashboard Tableau report over <strong>560K+</strong> records — trends, demographics, hotspots, delays.</p>
+        <a class="btn" href="https://github.com/Akanksh171717/Crime-Analysis-in-New-York-City" target="_blank" rel="noopener">View repo</a>
+      </article>
 
-    <!-- Crime Analysis in NYC -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-city" aria-hidden="true"></i></div>
-      <div class="tag">Tableau</div>
-      <h3>Crime Analysis in NYC</h3>
-      <p class="muted">Multi-dashboard Tableau report over <strong>560K+</strong> records — trends, demographics, hotspots, delays.</p>
-      <a class="btn" href="https://github.com/Akanksh171717/Crime-Analysis-in-New-York-City" target="_blank" rel="noopener">View repo</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-futbol" aria-hidden="true"></i></div>
+        <div class="tag">R • Viz</div>
+        <h3>FIFA 2026 — Talent, Value &amp; Vision</h3>
+        <p class="muted">Analyzed <strong>1.2M+</strong> player records; geospatial &amp; performance visuals; storytelling poster.</p>
+        <a class="btn" href="https://github.com/Akanksh171717/-FIFA-2026-Mapping-Talent-Value-Vision" target="_blank" rel="noopener">View repo</a>
+      </article>
 
-    <!-- FIFA 2026 -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-futbol" aria-hidden="true"></i></div>
-      <div class="tag">R • Viz</div>
-      <h3>FIFA 2026 — Talent, Value &amp; Vision</h3>
-      <p class="muted">Analyzed <strong>1.2M+</strong> player records; geospatial &amp; performance visuals; storytelling poster.</p>
-      <a class="btn" href="https://github.com/Akanksh171717/-FIFA-2026-Mapping-Talent-Value-Vision" target="_blank" rel="noopener">View repo</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><img src="src/images/nestle.svg" alt="Nestlé logo"></div>
+        <div class="tag">Strategy</div>
+        <h3>Nestlé — Tech-Driven Coffee Innovation</h3>
+        <p class="muted">Capstone roadmap: IoT machines, AI personalization, blockchain supply chain; KPI dashboard plans.</p>
+        <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
+      </article>
 
-    <!-- Nestlé — use local SVG logo -->
-    <article class="card">
-      <div class="thumb"><img src="src/images/nestle.svg" alt="Nestlé logo"></div>
-      <div class="tag">Strategy</div>
-      <h3>Nestlé — Tech-Driven Coffee Innovation</h3>
-      <p class="muted">Capstone roadmap: IoT machines, AI personalization, blockchain supply chain; KPI dashboard plans.</p>
-      <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
+        <div class="tag">NLP</div>
+        <h3>Spam Email Classification</h3>
+        <p class="muted">TF-IDF + SVM/Naïve Bayes/LogReg — best model AUC <strong>0.97</strong>, accuracy <strong>91%</strong>.</p>
+        <a class="btn" href="https://github.com/Akanksh171717/Spam-Email-Classification-Using-Multiple-Classifiers" target="_blank" rel="noopener">View repo</a>
+      </article>
 
-    <!-- Spam Email Classification -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
-      <div class="tag">NLP</div>
-      <h3>Spam Email Classification</h3>
-      <p class="muted">TF-IDF + SVM/Naïve Bayes/LogReg — best model AUC <strong>0.97</strong>, accuracy <strong>91%</strong>.</p>
-      <a class="btn" href="https://github.com/Akanksh171717/Spam-Email-Classification-Using-Multiple-Classifiers" target="_blank" rel="noopener">View repo</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+        <div class="tag">Deep Learning</div>
+        <h3>Text-to-Image Generation</h3>
+        <p class="muted">GAN + Stable Diffusion with BERT-based optimization and fine-tuning.</p>
+        <a class="btn" href="https://github.com/Akanksh171717/-Text-to-Image-Generation-Using-Deep-Learning" target="_blank" rel="noopener">View repo</a>
+      </article>
 
-    <!-- Text-to-Image Generation -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
-      <div class="tag">Deep Learning</div>
-      <h3>Text-to-Image Generation</h3>
-      <p class="muted">GAN + Stable Diffusion with BERT-based optimization and fine-tuning.</p>
-      <a class="btn" href="https://github.com/Akanksh171717/-Text-to-Image-Generation-Using-Deep-Learning" target="_blank" rel="noopener">View repo</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-school" aria-hidden="true"></i></div>
+        <div class="tag">ML • Flask</div>
+        <h3>Student Performance Prediction</h3>
+        <p class="muted">End-to-end pipeline; modular ETL; CatBoost top performer; Flask for real-time predictions.</p>
+        <a class="btn" href="https://github.com/Akanksh171717/Student_Performance_Prediction" target="_blank" rel="noopener">View repo</a>
+      </article>
 
-    <!-- Student Performance Prediction -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-school" aria-hidden="true"></i></div>
-      <div class="tag">ML • Flask</div>
-      <h3>Student Performance Prediction</h3>
-      <p class="muted">End-to-end pipeline; modular ETL; CatBoost top performer; Flask for real-time predictions.</p>
-      <a class="btn" href="https://github.com/Akanksh171717/Student_Performance_Prediction" target="_blank" rel="noopener">View repo</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+        <div class="tag">Time Series</div>
+        <h3>Energy Demand Forecasting</h3>
+        <p class="muted">XGBoost forecasting with R — R² <strong>0.825</strong>; reduced peak load by <strong>10%</strong>.</p>
+        <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
+      </article>
 
-    <!-- Energy Demand Forecasting -->
-    <article class="card">
-      <div class="thumb"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
-      <div class="tag">Time Series</div>
-      <h3>Energy Demand Forecasting</h3>
-      <p class="muted">XGBoost forecasting with R — R² <strong>0.825</strong>; reduced peak load by <strong>10%</strong>.</p>
-      <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
-    </article>
+      <article class="card">
+        <div class="thumb"><img src="src/images/airbnb.svg" alt="Airbnb logo"></div>
+        <div class="tag">EDA</div>
+        <h3>Airbnb NYC Analysis</h3>
+        <p class="muted">Cleaned, engineered, and visualized AB_NYC_2019 with Matplotlib/Seaborn; pricing & geo patterns.</p>
+        <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
+      </article>
+    </div>
+  </section>
 
-    <!-- Airbnb NYC Analysis — use local SVG logo -->
-    <article class="card">
-      <div class="thumb"><img src="src/images/airbnb.svg" alt="Airbnb logo"></div>
-      <div class="tag">EDA</div>
-      <h3>Airbnb NYC Analysis</h3>
-      <p class="muted">Cleaned, engineered, and visualized AB_NYC_2019 with Matplotlib/Seaborn; pricing &amp; geo patterns.</p>
-      <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
-    </article>
-
-  </div>
-</section>
-
-  <!-- ========== CERTS ========== -->
+  <!-- CERTS -->
   <section id="certs" class="section">
     <h2>Certifications</h2>
     <div class="grid">
@@ -348,24 +324,24 @@
       <div class="card"><strong>SQL (Advanced)</strong><span class="muted"> • HackerRank • Jun 2025</span></div>
       <div class="card"><strong>SQL (Intermediate)</strong><span class="muted"> • HackerRank • Jun 2025</span></div>
       <div class="card"><strong>Learning Data Analytics: Foundations</strong><span class="muted"> • LinkedIn • Jan 2024</span></div>
-      <div class="card"><strong>Python & Django Full‑Stack Bootcamp</strong><span class="muted"> • Udemy • Dec 2022</span></div>
+      <div class="card"><strong>Python & Django Full-Stack Bootcamp</strong><span class="muted"> • Udemy • Dec 2022</span></div>
       <div class="card"><strong>DSA in Java (Intermediate)</strong><span class="muted"> • Great Learning • Jul 2022</span></div>
-      <div class="card"><strong>E‑commerce with HTML & CSS</strong><span class="muted"> • Great Learning • Jul 2022</span></div>
+      <div class="card"><strong>E-commerce with HTML & CSS</strong><span class="muted"> • Great Learning • Jul 2022</span></div>
       <div class="card"><strong>OOPs in Java</strong><span class="muted"> • Great Learning • Jul 2022</span></div>
       <div class="card"><strong>Java Programming</strong><span class="muted"> • Great Learning • Jun 2022</span></div>
-      <div class="card"><strong>AWS Fundamentals: Going Cloud‑Native</strong><span class="muted"> • Coursera • Aug 2021</span></div>
+      <div class="card"><strong>AWS Fundamentals: Going Cloud-Native</strong><span class="muted"> • Coursera • Aug 2021</span></div>
       <div class="card"><strong>Python Data Structures</strong><span class="muted"> • Coursera • May 2020</span></div>
       <div class="card"><strong>Using Python to Access Web Data</strong><span class="muted"> • Coursera • May 2020</span></div>
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
+  <!-- CONTACT -->
   <footer id="contact">
     <div class="footer-inner">
       <div>
         <strong>Let’s collaborate.</strong>
         <div class="muted">Open for Data Analyst / Business Analyst roles.
-          <br/>Email: <a href="mailto:akanksh171717@gmail.com" style="color:#fff">akanksh171717@gmail.com</a> • Phone: +1‑315‑746‑1174
+          <br> Email: <a href="mailto:akanksh171717@gmail.com" style="color:#fff">akanksh171717@gmail.com</a> • Phone: +1-315-746-1174
         </div>
       </div>
       <div class="socials">
@@ -377,10 +353,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
