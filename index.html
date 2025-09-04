@@ -90,6 +90,90 @@
     .about-kicker{color:var(--brand);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
     .about-title{font-size:clamp(30px,4vw,42px);margin:.2rem 0 .8rem}
     .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(110,231,255,.12);color:#6ee7ff;font-weight:700;font-size:.85rem;margin:6px 8px 0 0}
+    /* ===== About + Focus Areas (new look) ===== */
+#about { scroll-margin-top: 90px; }
+
+.about-wrap{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items:start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 980px){
+  .about-wrap{ grid-template-columns: 1fr; }
+}
+
+.about-card{
+  padding: 26px;
+  border-radius: 18px;
+  background:
+    radial-gradient(1200px 600px at -10% -30%, rgba(110,231,255,.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--shadow);
+}
+
+/* big readable About */
+.about-kicker{
+  color: var(--brand);
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.about-title{
+  font-size: clamp(32px, 4.6vw, 48px);
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.about-lead{
+  font-size: clamp(18px, 2vw, 20px);
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* grouped chips */
+.chip-group{ margin-top: 10px; }
+.chip-group h4{
+  margin: 14px 0 8px;
+  font-size: 0.95rem;
+  color: #a7b1c6;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pills{
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 12px; border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.10);
+  font-weight: 700; font-size: .9rem; color: var(--text);
+}
+.pill i{ opacity:.9; }
+
+/* “toolkit panel” card on the right */
+.toolkit{
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.toolkit .row{ margin-top: 8px; }
+.toolkit .row .pills{ gap: 8px; }
+
+/* extra space below hero so About is clearly visible */
+.hero-pro{ padding-bottom: 24px; }
+
 
     /* ---------- Skills ---------- */
     .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:14px}
@@ -176,21 +260,78 @@
   </main>
 
   <!-- ABOUT -->
- <div class="about-card">
-  <h3 style="margin:0 0 .6rem;">Focus Areas & Toolkit</h3>
-  <div style="display:flex;flex-wrap:wrap;gap:8px;">
-    <span class="pill">SQL (Advanced Querying & Optimization)</span>
-    <span class="pill">Python for Data Analysis</span>
-    <span class="pill">Business Intelligence (Tableau / Power BI)</span>
-    <span class="pill">Data Cleaning & Transformation (ETL)</span>
-    <span class="pill">Statistical Analysis & Hypothesis Testing</span>
-    <span class="pill">Time Series Forecasting</span>
-    <span class="pill">Data Modeling & Database Design</span>
-    <span class="pill">Data Storytelling & Visualization</span>
-    <span class="pill">Cloud Data Platforms (AWS & Azure)</span>
-    <span class="pill">Business Communication & Stakeholder Management</span>
+<section id="about" class="section">
+  <div class="about-wrap">
+    <!-- Left: About copy -->
+    <div class="about-card">
+      <div class="about-kicker">About</div>
+      <h2 class="about-title">I turn raw data into actionable decisions.</h2>
+      <p class="about-lead">
+        I build reliable data pipelines in <strong>SQL</strong>, analyze and model data in
+        <strong>Python</strong> and <strong>R</strong>, and communicate insights through interactive
+        dashboards in <strong>Tableau</strong> and <strong>Power BI</strong>. I follow a structured lifecycle —
+        <strong>Ask → Prepare → Process → Analyze → Share → Act</strong> — so insights are not just found,
+        they’re used. I care about responsible analytics, accessibility, and shipping work people actually use.
+      </p>
+    </div>
+
+    <!-- Right: Focus Areas & Toolkit (grouped) -->
+    <aside class="toolkit" aria-label="Focus Areas & Toolkit">
+      <h3 style="margin:0 0 6px;">Focus Areas & Toolkit</h3>
+
+      <div class="chip-group">
+        <h4><i class="fa-solid fa-code"></i> Core Data Skills</h4>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-database"></i> SQL (Advanced)</span>
+          <span class="pill"><i class="fa-brands fa-python"></i> Python (Pandas, NumPy)</span>
+          <span class="pill"><i class="fa-solid fa-r"></i> R (tidyverse)</span>
+          <span class="pill"><i class="fa-solid fa-broom"></i> Data Cleaning & ETL</span>
+          <span class="pill"><i class="fa-solid fa-diagram-project"></i> Data Modeling</span>
+        </div>
+      </div>
+
+      <div class="chip-group">
+        <h4><i class="fa-solid fa-chart-line"></i> Analytics & Statistics</h4>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-square-root-variable"></i> Hypothesis Testing</span>
+          <span class="pill"><i class="fa-solid fa-chart-simple"></i> Regression & ANOVA</span>
+          <span class="pill"><i class="fa-solid fa-clock-rotate-left"></i> Time Series Forecasting</span>
+          <span class="pill"><i class="fa-solid fa-brain"></i> ML (Scikit-learn / XGBoost)</span>
+        </div>
+      </div>
+
+      <div class="chip-group">
+        <h4><i class="fa-solid fa-chart-pie"></i> BI & Storytelling</h4>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-table-columns"></i> Tableau</span>
+          <span class="pill"><i class="fa-solid fa-chart-bar"></i> Power BI</span>
+          <span class="pill"><i class="fa-solid fa-person-chalkboard"></i> Data Storytelling</span>
+          <span class="pill"><i class="fa-solid fa-file-lines"></i> KPI Design & Reporting</span>
+        </div>
+      </div>
+
+      <div class="chip-group">
+        <h4><i class="fa-solid fa-cloud"></i> Cloud & Ops</h4>
+        <div class="pills">
+          <span class="pill"><i class="fa-brands fa-aws"></i> AWS (S3, EC2)</span>
+          <span class="pill"><i class="fa-brands fa-microsoft"></i> Azure / Power Platform</span>
+          <span class="pill"><i class="fa-solid fa-gears"></i> Automation (RPA / Cron)</span>
+          <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+        </div>
+      </div>
+
+      <div class="chip-group" style="margin-bottom:-4px;">
+        <h4><i class="fa-solid fa-handshake-angle"></i> Business & Communication</h4>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-users"></i> Stakeholder Management</span>
+          <span class="pill"><i class="fa-solid fa-timeline"></i> Roadmapping & Prioritization</span>
+          <span class="pill"><i class="fa-solid fa-comments"></i> Executive Communication</span>
+        </div>
+      </div>
+    </aside>
   </div>
-</div>
+</section>
+
 
   <!-- SKILLS -->
   <section id="skills" class="section">
@@ -460,4 +601,5 @@
   </script>
 </body>
 </html>
+
 
