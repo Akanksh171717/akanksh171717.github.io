@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome (CSS CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root{
@@ -17,73 +16,22 @@
       --ring:0 0 0 3px rgba(110,231,255,.25); --radius:18px;
       --shadow:0 12px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
     }
-    /* --- Quick Facts: glossy stat card --- */
-.qcard{
-  position: relative;
-  padding: 22px 22px 18px;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.10);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.qcard::before{
-  content:"";
-  position:absolute; inset:-1px;
-  border-radius: 20px;
-  padding:1px; pointer-events:none;
-  background:
-    linear-gradient(140deg, rgba(110,231,255,.55), rgba(254,127,45,.55) 30%, rgba(255,255,255,.0) 60%);
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-}
-.q-head{
-  display:flex; align-items:center; gap:10px; margin-bottom:10px;
-}
-.q-head i{
-  width:34px; height:34px; display:grid; place-items:center;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--brand), #ff9a45);
-  color:#161616; font-size:16px; font-weight:900;
-}
-.q-title{margin:0; font-size:18px;}
 
-.q-list{margin:8px 0 10px; padding:0; list-style:none; display:grid; gap:8px;}
-.q-item{display:flex; gap:10px; align-items:flex-start;}
-.q-item .dot{
-  width:22px; height:22px; flex:0 0 22px; border-radius:8px;
-  display:grid; place-items:center; color:#0d1b2a; font-size:12px;
-  background: linear-gradient(135deg, rgba(110,231,255,.65), rgba(255,255,255,.2));
-  box-shadow: 0 2px 10px rgba(0,0,0,.25) inset;
-}
-.q-item p{margin:0; color:var(--muted); line-height:1.55;}
-
-.q-chips{display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 2px;}
-.q-chip{
-  display:inline-flex; align-items:center; gap:6px;
-  background: rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.10);
-  padding:6px 10px; border-radius:999px; font-weight:700; font-size:.82rem;
-}
-.q-chip i{opacity:.8}
-
-.q-flow{
-  margin-top:10px; display:flex; flex-wrap:wrap; align-items:center; gap:6px;
-}
-.q-step{
-  background: rgba(110,231,255,.12);
-  color:#6ee7ff; font-weight:800; letter-spacing:.02em;
-  padding:6px 10px; border-radius:999px; font-size:.78rem;
-  border:1px solid rgba(110,231,255,.25);
-}
-.q-arrow{opacity:.6}
-
-.badge-row img{height:26px;margin-right:6px;vertical-align:middle}
-
-background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-backdrop-filter: blur(6px);
+    /* ---------- Fancy “Quick Facts” card ---------- */
+    .qcard{position:relative;padding:22px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.10);box-shadow:var(--shadow);overflow:hidden}
+    .qcard::before{content:"";position:absolute;inset:-1px;border-radius:20px;padding:1px;pointer-events:none;background:linear-gradient(140deg,rgba(110,231,255,.55),rgba(254,127,45,.55) 30%,rgba(255,255,255,0) 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .q-head i{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--brand),#ff9a45);color:#161616;font-size:16px;font-weight:900}
+    .q-title{margin:0;font-size:18px}
+    .q-list{margin:8px 0 10px;padding:0;list-style:none;display:grid;gap:8px}
+    .q-item{display:flex;gap:10px;align-items:flex-start}
+    .q-item .dot{width:22px;height:22px;flex:0 0 22px;border-radius:8px;display:grid;place-items:center;color:#0d1b2a;font-size:12px;background:linear-gradient(135deg,rgba(110,231,255,.65),rgba(255,255,255,.2));box-shadow:0 2px 10px rgba(0,0,0,.25) inset}
+    .q-item p{margin:0;color:var(--muted);line-height:1.55}
+    .q-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+    .q-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.82rem}
+    .q-flow{margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+    .q-step{background:rgba(110,231,255,.12);color:#6ee7ff;font-weight:800;letter-spacing:.02em;padding:6px 10px;border-radius:999px;font-size:.78rem;border:1px solid rgba(110,231,255,.25)}
+    .q-arrow{opacity:.6}
 
     *{box-sizing:border-box} html,body{height:100%}
     body{
@@ -105,9 +53,8 @@ backdrop-filter: blur(6px);
     .nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:999px}
     .nav a:hover,.nav a:focus{color:var(--text);background:rgba(255,255,255,.06);outline:none;box-shadow:var(--ring)}
 
-    /* ---------- PREMIUM HERO ---------- */
-    .hero-pro{position:relative;max-width:1200px;margin:0 auto;padding:90px 20px 40px;
-      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    /* ---------- HERO ---------- */
+    .hero-pro{position:relative;max-width:1200px;margin:0 auto;padding:90px 20px 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
     @media (max-width:900px){.hero-pro{grid-template-columns:1fr;padding-top:70px}}
     .kicker{color:var(--brand);font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
     .title-xl{font-size:clamp(40px,7vw,76px);line-height:1.05;margin:0 0 10px}
@@ -120,7 +67,6 @@ backdrop-filter: blur(6px);
     .btn.ghost{color:var(--text);background:rgba(255,255,255,.06)}
     .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
     .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-    .badge-row img{height:28px;margin-right:8px;vertical-align:middle}
     .socials{display:flex;gap:10px;margin-top:14px}
     .icon-btn{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
     .icon-btn:hover{background:var(--card-hover)}
@@ -128,31 +74,29 @@ backdrop-filter: blur(6px);
     .scroll-cue span{display:inline-block;width:10px;height:18px;border:2px solid rgba(255,255,255,.4);border-radius:10px;position:relative}
     .scroll-cue span::after{content:"";position:absolute;left:50%;top:4px;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.6);transform:translateX(-50%);animation:dot 1.3s infinite}
     @keyframes dot{50%{transform:translate(-50%,6px);opacity:.5}}
-    /* floating background glow */
-    body::before,body::after{content:"";position:fixed;inset:-20% -10% auto auto;z-index:-1;pointer-events:none;width:60vmax;height:60vmax;border-radius:50%;
-      background:radial-gradient(closest-side, rgba(110,231,255,.12), transparent 60%);animation:float 18s ease-in-out infinite alternate}
+    body::before,body::after{content:"";position:fixed;inset:-20% -10% auto auto;z-index:-1;pointer-events:none;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(closest-side, rgba(110,231,255,.12), transparent 60%);animation:float 18s ease-in-out infinite alternate}
     body::after{left:-10%;top:-5%;background:radial-gradient(closest-side, rgba(254,127,45,.14), transparent 60%);animation-duration:22s}
     @keyframes float{to{transform:translate3d(0,30px,0) scale(1.03)}}
 
-    /* ---------- SHARED SECTIONS ---------- */
+    /* ---------- Sections ---------- */
     section{scroll-margin-top:90px}
     .section{max-width:1200px;margin:0 auto;padding:32px 20px}
     .section h2{font-size:clamp(26px,3vw,34px);margin:8px 0 18px}
     .muted{color:var(--muted)}
 
-    /* ---------- ABOUT (on same page) ---------- */
+    /* ---------- About ---------- */
     #about .lead{font-size:1.15rem;line-height:1.9;color:var(--muted);max-width:950px}
     .about-card{margin-top:20px;padding:24px;border-radius:18px;background:var(--card);border:1px solid rgba(255,255,255,.08)}
     .about-kicker{color:var(--brand);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
     .about-title{font-size:clamp(30px,4vw,42px);margin:.2rem 0 .8rem}
     .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(110,231,255,.12);color:#6ee7ff;font-weight:700;font-size:.85rem;margin:6px 8px 0 0}
 
-    /* Skills */
+    /* ---------- Skills ---------- */
     .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:14px}
     .skill{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;height:64px;display:grid;place-items:center;box-shadow:var(--shadow)}
     .skill img{height:32px}
 
-    /* Cards / Projects */
+    /* ---------- Cards / Projects ---------- */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
     .card:hover{background:var(--card-hover);transform:translateY(-2px)}
@@ -160,8 +104,17 @@ backdrop-filter: blur(6px);
     .thumb i{font-size:64px;color:#cfe9ff}
     .thumb img{max-width:70%;max-height:70%;object-fit:contain;display:block}
     .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(110,231,255,.15);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.3px}
+    .cat-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);font-size:.78rem}
 
-    /* Footer */
+    /* ---------- Project filter bar ---------- */
+    .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 18px}
+    .filter{cursor:pointer;border:none;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);padding:10px 14px;border-radius:999px;font-weight:700}
+    .filter:hover{background:rgba(255,255,255,.12)}
+    .filter.is-active{background:linear-gradient(135deg,var(--brand),#ff9a45);color:#161616;border-color:transparent}
+    .hidden{display:none !important}
+
+    /* ---------- Footer ---------- */
     footer{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding:30px 20px;background:rgba(255,255,255,.03)}
     .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
 
@@ -186,22 +139,14 @@ backdrop-filter: blur(6px);
     </div>
   </header>
 
-  <!-- HERO (upgraded) -->
+  <!-- HERO -->
   <main id="top" class="hero-pro">
     <div class="hero-copy">
       <p class="kicker">Akanksh Shetty</p>
-      <h1 class="title-xl">
-        <span class="grad">Data Analyst</span> turning<br/> data into <span class="glow">decisions</span>.
-      </h1>
-      <p class="subtitle-lg">
-        MS in Information Systems (CAS in Data Science) — Syracuse University.
-        Focused on <strong>SQL, Tableau, Python & R</strong>. Passionate about clear analytics,
-        reliable pipelines, and useful dashboards.
-      </p>
+      <h1 class="title-xl"><span class="grad">Data Analyst</span> turning<br/>data into <span class="glow">decisions</span>.</h1>
+      <p class="subtitle-lg">MS in Information Systems (CAS in Data Science) — Syracuse University. Focused on <strong>SQL, Tableau, Python & R</strong>. Passionate about clear analytics, reliable pipelines, and useful dashboards.</p>
       <div class="cta-row">
-        <a class="btn primary" href="https://www.linkedin.com/in/akanksh17" target="_blank" rel="noreferrer">
-          <i class="fa-brands fa-linkedin"></i> Connect
-        </a>
+        <a class="btn primary" href="https://www.linkedin.com/in/akanksh17" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i> Connect</a>
         <a class="btn ghost" href="#projects"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
         <a class="btn ghost" href="mailto:akanksh171717@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a>
       </div>
@@ -213,76 +158,33 @@ backdrop-filter: blur(6px);
     </div>
 
     <aside class="qcard" aria-label="Quick facts">
-  <div class="q-head">
-    <i class="fa-solid fa-bolt"></i>
-    <h3 class="q-title">Quick Facts</h3>
-  </div>
-
-  <ul class="q-list">
-    <li class="q-item">
-      <span class="dot"><i class="fa-solid fa-code"></i></span>
-      <p>Advanced in <strong>Python, SQL, and R</strong> for analysis, modeling, and automation.</p>
-    </li>
-    <li class="q-item">
-      <span class="dot"><i class="fa-solid fa-gears"></i></span>
-      <p><strong>ETL automation</strong>, interactive dashboards (<strong>Tableau / Power BI</strong>), and cloud (AWS, Azure).</p>
-    </li>
-    <li class="q-item">
-      <span class="dot"><i class="fa-solid fa-brain"></i></span>
-      <p>Hands-on with <strong>ML pipelines</strong> (XGBoost, NLP, Deep Learning) and productionizing insights.</p>
-    </li>
-  </ul>
-
-  <!-- Key tags / chips -->
-  <div class="q-chips" aria-label="Key tools">
-    <span class="q-chip"><i class="fa-solid fa-database"></i> SQL</span>
-    <span class="q-chip"><i class="fa-solid fa-leaf"></i> PostgreSQL</span>
-    <span class="q-chip"><i class="fa-solid fa-chart-line"></i> Power BI</span>
-    <span class="q-chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
-    <span class="q-chip"><i class="fa-solid fa-cloud"></i> AWS</span>
-  </div>
-
-  <!-- Visual lifecycle -->
-  <div class="q-flow" aria-label="Data analysis lifecycle">
-    <span class="q-step">Ask</span><span class="q-arrow">→</span>
-    <span class="q-step">Prepare</span><span class="q-arrow">→</span>
-    <span class="q-step">Process</span><span class="q-arrow">→</span>
-    <span class="q-step">Analyze</span><span class="q-arrow">→</span>
-    <span class="q-step">Share</span><span class="q-arrow">→</span>
-    <span class="q-step">Act</span>
-  </div>
-
-  
-</aside>
-
+      <div class="q-head"><i class="fa-solid fa-bolt"></i><h3 class="q-title">Quick Facts</h3></div>
+      <ul class="q-list">
+        <li class="q-item"><span class="dot"><i class="fa-solid fa-code"></i></span><p>Advanced in <strong>Python, SQL, and R</strong> for analysis, modeling, and automation.</p></li>
+        <li class="q-item"><span class="dot"><i class="fa-solid fa-gears"></i></span><p><strong>ETL automation</strong>, interactive dashboards (<strong>Tableau / Power BI</strong>), and cloud (AWS, Azure).</p></li>
+        <li class="q-item"><span class="dot"><i class="fa-solid fa-brain"></i></span><p>Hands-on with <strong>ML pipelines</strong> (XGBoost, NLP, Deep Learning) and productionizing insights.</p></li>
+      </ul>
+      <div class="q-chips" aria-label="Key tools">
+        <span class="q-chip"><i class="fa-solid fa-database"></i> SQL</span>
+        <span class="q-chip"><i class="fa-solid fa-leaf"></i> PostgreSQL</span>
+        <span class="q-chip"><i class="fa-solid fa-chart-line"></i> Power BI</span>
+        <span class="q-chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
+        <span class="q-chip"><i class="fa-solid fa-cloud"></i> AWS</span>
+      </div>
+      <div class="q-flow"><span class="q-step">Ask</span><span class="q-arrow">→</span><span class="q-step">Prepare</span><span class="q-arrow">→</span><span class="q-step">Process</span><span class="q-arrow">→</span><span class="q-step">Analyze</span><span class="q-arrow">→</span><span class="q-step">Share</span><span class="q-arrow">→</span><span class="q-step">Act</span></div>
+    </aside>
   </main>
 
-  <!-- ABOUT (same page, beautified) -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="about-kicker">About</div>
     <h2 class="about-title">I turn raw data into actionable insights.</h2>
-    <p class="lead">
-      My toolkit includes <strong>SQL</strong> for building reliable data pipelines, <strong>Python</strong> and <strong>R</strong> for advanced analysis and
-      modeling, and <strong>Tableau/Power BI</strong> for clear, interactive dashboards that tell compelling stories.
-      I follow a structured lifecycle: <strong>Ask → Prepare → Process → Analyze → Share → Act</strong>,
-      ensuring insights aren’t just found—they drive decisions. I care about responsible analytics, accessibility,
-      and shipping work people actually use.
-    </p>
-
+    <p class="lead">My toolkit includes <strong>SQL</strong> for reliable data pipelines, <strong>Python</strong> and <strong>R</strong> for advanced analysis & modeling, and <strong>Tableau/Power BI</strong> for interactive dashboards that tell clear stories. I follow <strong>Ask → Prepare → Process → Analyze → Share → Act</strong> so insights drive decisions. I care about responsible analytics, accessibility, and shipping work people actually use.</p>
     <div class="about-card">
       <h3 style="margin:0 0 .6rem;">Focus Areas & Toolkit</h3>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span class="pill">ETL Automation</span>
-        <span class="pill">XGBoost</span>
-        <span class="pill">Time Series</span>
-        <span class="pill">NLP</span>
-        <span class="pill">SQL</span>
-        <span class="pill">Python</span>
-        <span class="pill">R</span>
-        <span class="pill">Tableau</span>
-        <span class="pill">Power BI</span>
-        <span class="pill">AWS</span>
-        <span class="pill">Azure</span>
+        <span class="pill">ETL Automation</span><span class="pill">Time Series</span><span class="pill">NLP</span><span class="pill">XGBoost</span>
+        <span class="pill">SQL</span><span class="pill">Python</span><span class="pill">R</span><span class="pill">Tableau</span><span class="pill">Power BI</span><span class="pill">AWS</span><span class="pill">Azure</span>
       </div>
     </div>
   </section>
@@ -313,24 +215,21 @@ backdrop-filter: blur(6px);
     <div class="grid">
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <h3 style="margin:0;">Machine Learning Intern</h3>
-          <span class="muted">Apr–Jun 2022</span>
+          <h3 style="margin:0;">Machine Learning Intern</h3><span class="muted">Apr–Jun 2022</span>
         </div>
         <p class="muted" style="margin:.2rem 0 .8rem;"><strong>Black Box Limited</strong> • Mumbai, India</p>
-        <ul style="line-height:1.7; margin:0; padding-left:20px;">
+        <ul style="line-height:1.7;margin:0;padding-left:20px">
           <li>Developed an <strong>ANPR system</strong> with Python & OpenCV, achieving <strong>86.3% accuracy</strong>.</li>
           <li>Optimized preprocessing (Gaussian blur, Sobel filters, morphological ops) → latency <strong>-30%</strong>, precision <strong>+12%</strong>.</li>
           <li>Built an <strong>Automation Anywhere</strong> RPA bot for invoice extraction → manual entry <strong>-65%</strong>.</li>
         </ul>
       </div>
-
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;">
-          <h3 style="margin:0;">Data Science Intern (Signal & Sensor Analytics)</h3>
-          <span class="muted">Jan–Mar 2022</span>
+          <h3 style="margin:0;">Data Science Intern (Signal & Sensor Analytics)</h3><span class="muted">Jan–Mar 2022</span>
         </div>
         <p class="muted" style="margin:.2rem 0 .8rem;"><strong>BARC</strong> • Mumbai, India</p>
-        <ul style="line-height:1.7; margin:0; padding-left:20px;">
+        <ul style="line-height:1.7;margin:0;padding-left:20px">
           <li>Python-based <strong>data acquisition</strong> for <strong>10K+ real-time sensor readings</strong>.</li>
           <li>Improved anomaly detection by <strong>30%</strong>; reduced noise variance by <strong>20%</strong>.</li>
           <li>Delivered actionable insights & <strong>technical documentation</strong> for research teams.</li>
@@ -339,77 +238,103 @@ backdrop-filter: blur(6px);
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS WITH FILTERS -->
   <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="grid">
-      <article class="card">
+
+    <!-- Filter bar -->
+    <div class="filterbar" role="tablist" aria-label="Project filters">
+      <button class="filter is-active" data-filter="all" aria-selected="true">All</button>
+      <button class="filter" data-filter="analytics">Data Analytics</button>
+      <button class="filter" data-filter="bi">Business Intelligence</button>
+      <button class="filter" data-filter="ds">Data Science / ML</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid" id="projectGrid">
+      <!-- Data Analytics + BI -->
+      <article class="card" data-cats="analytics bi tableau viz">
         <div class="thumb"><i class="fa-solid fa-city" aria-hidden="true"></i></div>
         <div class="tag">Tableau</div>
         <h3>Crime Analysis in NYC</h3>
         <p class="muted">Multi-dashboard Tableau report over <strong>560K+</strong> records — trends, demographics, hotspots, delays.</p>
+        <div class="cat-chips"><span class="chip">Analytics</span><span class="chip">BI</span></div>
         <a class="btn" href="https://github.com/Akanksh171717/Crime-Analysis-in-New-York-City" target="_blank" rel="noopener">View repo</a>
       </article>
 
-      <article class="card">
+      <!-- Analytics + DS -->
+      <article class="card" data-cats="analytics ds viz r">
         <div class="thumb"><i class="fa-solid fa-futbol" aria-hidden="true"></i></div>
         <div class="tag">R • Viz</div>
         <h3>FIFA 2026 — Talent, Value &amp; Vision</h3>
         <p class="muted">Analyzed <strong>1.2M+</strong> player records; geospatial &amp; performance visuals; storytelling poster.</p>
+        <div class="cat-chips"><span class="chip">Analytics</span><span class="chip">Data Science</span></div>
         <a class="btn" href="https://github.com/Akanksh171717/-FIFA-2026-Mapping-Talent-Value-Vision" target="_blank" rel="noopener">View repo</a>
       </article>
 
-      <article class="card">
+      <!-- BI / Strategy -->
+      <article class="card" data-cats="bi analytics strategy">
         <div class="thumb"><img src="src/images/nestle.svg" alt="Nestlé logo"></div>
         <div class="tag">Strategy</div>
         <h3>Nestlé — Tech-Driven Coffee Innovation</h3>
         <p class="muted">Capstone roadmap: IoT machines, AI personalization, blockchain supply chain; KPI dashboard plans.</p>
+        <div class="cat-chips"><span class="chip">BI</span><span class="chip">Analytics</span></div>
         <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
       </article>
 
-      <article class="card">
+      <!-- DS / NLP -->
+      <article class="card" data-cats="ds ml nlp">
         <div class="thumb"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
         <div class="tag">NLP</div>
         <h3>Spam Email Classification</h3>
         <p class="muted">TF-IDF + SVM/Naïve Bayes/LogReg — best model AUC <strong>0.97</strong>, accuracy <strong>91%</strong>.</p>
+        <div class="cat-chips"><span class="chip">Data Science</span></div>
         <a class="btn" href="https://github.com/Akanksh171717/Spam-Email-Classification-Using-Multiple-Classifiers" target="_blank" rel="noopener">View repo</a>
       </article>
 
-      <article class="card">
+      <!-- DS / DL -->
+      <article class="card" data-cats="ds ml dl">
         <div class="thumb"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
         <div class="tag">Deep Learning</div>
         <h3>Text-to-Image Generation</h3>
         <p class="muted">GAN + Stable Diffusion with BERT-based optimization and fine-tuning.</p>
+        <div class="cat-chips"><span class="chip">Data Science</span></div>
         <a class="btn" href="https://github.com/Akanksh171717/-Text-to-Image-Generation-Using-Deep-Learning" target="_blank" rel="noopener">View repo</a>
       </article>
 
-      <article class="card">
+      <!-- DS / ML -->
+      <article class="card" data-cats="ds ml flask">
         <div class="thumb"><i class="fa-solid fa-school" aria-hidden="true"></i></div>
         <div class="tag">ML • Flask</div>
         <h3>Student Performance Prediction</h3>
         <p class="muted">End-to-end pipeline; modular ETL; CatBoost top performer; Flask for real-time predictions.</p>
+        <div class="cat-chips"><span class="chip">Data Science</span></div>
         <a class="btn" href="https://github.com/Akanksh171717/Student_Performance_Prediction" target="_blank" rel="noopener">View repo</a>
       </article>
 
-      <article class="card">
+      <!-- DS / Time Series -->
+      <article class="card" data-cats="ds analytics timeseries">
         <div class="thumb"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
         <div class="tag">Time Series</div>
         <h3>Energy Demand Forecasting</h3>
         <p class="muted">XGBoost forecasting with R — R² <strong>0.825</strong>; reduced peak load by <strong>10%</strong>.</p>
+        <div class="cat-chips"><span class="chip">Data Science</span></div>
         <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
       </article>
 
-      <article class="card">
+      <!-- Analytics / BI -->
+      <article class="card" data-cats="analytics bi eda">
         <div class="thumb"><img src="src/images/airbnb.svg" alt="Airbnb logo"></div>
         <div class="tag">EDA</div>
         <h3>Airbnb NYC Analysis</h3>
         <p class="muted">Cleaned, engineered, and visualized AB_NYC_2019 with Matplotlib/Seaborn; pricing & geo patterns.</p>
+        <div class="cat-chips"><span class="chip">Analytics</span><span class="chip">BI</span></div>
         <a class="btn" href="https://www.linkedin.com/in/akanksh17/details/projects/" target="_blank" rel="noopener">View project</a>
       </article>
     </div>
   </section>
 
-  <!-- CERTS -->
+  <!-- CERTIFICATIONS -->
   <section id="certs" class="section">
     <h2>Certifications</h2>
     <div class="grid">
@@ -447,7 +372,29 @@ backdrop-filter: blur(6px);
       </div>
     </div>
   </footer>
+
+  <!-- Simple filter logic -->
+  <script>
+    const buttons = document.querySelectorAll('.filter');
+    const cards   = document.querySelectorAll('#projectGrid .card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // button states
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const term = btn.dataset.filter;
+        cards.forEach(card => {
+          if (term === 'all') {
+            card.classList.remove('hidden');
+            return;
+          }
+          const tags = (card.getAttribute('data-cats') || '').toLowerCase();
+          tags.includes(term) ? card.classList.remove('hidden') : card.classList.add('hidden');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
-
